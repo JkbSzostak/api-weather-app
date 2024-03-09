@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 class="display-4 text-center">Weather App</h1>
+    <form id="cityForm" class="mb-4">
+        <div class="input-group">
+            <input type="text" class="form-control" id="cityInput" placeholder="Enter city name" required>
+            <button type="submit" class="btn btn-primary">Check Weather</button>
+        </div>
+    </form>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const cityForm = document.getElementById('cityForm');
+
+        cityForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const cityInput = document.getElementById('cityInput').value;
+            if (cityInput) {
+                window.location.href = `/weather?city=${encodeURIComponent(cityInput)}`;
+            }
+        });
+
+        const backButton = document.getElementById('backButton');
+
+        backButton.addEventListener('click', function () {
+            window.location.href = '/index.html';
+
+        });
+    });
+</script>
+</body>
+</html>
