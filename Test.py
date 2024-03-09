@@ -34,3 +34,4 @@ if __name__ == "__main__":
 
 # docker build -t weather-app .
 # docker run -p 5000:5000 -e OPENWEATHERMAP_API_KEY=daaa8b327f46e48425d2146ae9ec4516 weather-app
+# API key invalid rn
